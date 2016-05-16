@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class ImageShareViewController: UIViewController {
 
@@ -43,7 +44,17 @@ class ImageShareViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    // MARK: - Actions
+    
+    @IBAction func share(sender: AnyObject) {
+        
+        if let image = self.shareImage {
+            let controller = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            controller.addImage(image)
+            self.presentViewController(controller, animated: true, completion: nil)
+        }
+    }
 }
 
 extension ImageShareViewController: UIScrollViewDelegate {

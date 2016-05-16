@@ -185,7 +185,7 @@
             </objects>
             <point key="canvasLocation" x="1781" y="205"/>
         </scene>
-        <!--TableView & Camera-->
+        <!--Image List View Controller-->
         <scene sceneID="SLz-pc-iHj">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="Mhq-WN-4Sz" customClass="ImageListViewController" customModule="ACAssessment" customModuleProvider="target" sceneMemberID="viewController">
@@ -241,7 +241,7 @@
                             <constraint firstAttribute="trailing" secondItem="ybN-z4-3Vf" secondAttribute="trailing" id="mdp-Op-JeN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TableView &amp; Camera" id="SXH-Sg-SNy">
+                    <navigationItem key="navigationItem" id="SXH-Sg-SNy">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BsM-Bd-TVb">
                             <connections>
                                 <segue destination="lmH-Eb-Oe1" kind="show" id="CPX-W3-aKq"/>
@@ -317,6 +317,17 @@
                             <constraint firstItem="Bt5-jf-8i2" firstAttribute="leading" secondItem="ApS-jA-i0r" secondAttribute="leading" constant="20" id="wgW-wP-pvI"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="hjJ-8a-Lt5"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="lfb-0h-cfX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="of2-ov-f1N">
+                            <connections>
+                                <action selector="share:" destination="F0F-Ts-ddh" id="wOW-Ss-1w5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="shareImageView" destination="vSI-dL-tky" id="dwC-0W-C8u"/>
                         <outlet property="shareTextLabel" destination="Bt5-jf-8i2" id="9vX-9c-aHX"/>
