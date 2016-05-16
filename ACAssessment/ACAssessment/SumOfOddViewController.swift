@@ -29,7 +29,13 @@ class SumOfOddViewController: UIViewController {
     // MARK: - Custom Method
     private func calSumOfOdd(from start: Int, to end: Int) -> Int {
 
-        return 0
+        var sum = 0
+
+        for i in start...end where i % 2 == 1 {
+            sum += i
+        }
+
+        return sum
     }
 
     /*
