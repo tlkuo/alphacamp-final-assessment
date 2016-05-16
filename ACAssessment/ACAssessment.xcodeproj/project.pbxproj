@@ -10,6 +10,7 @@
 		5B73EF3E1CE9A5ED00C388DA /* readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 5B73EF3D1CE9A5ED00C388DA /* readme.rtf */; };
 		5B73EF401CE9A63C00C388DA /* LifeCycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B73EF3F1CE9A63C00C388DA /* LifeCycleViewController.swift */; };
 		5B73EF421CE9A87500C388DA /* ACLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B73EF411CE9A87500C388DA /* ACLog.swift */; };
+		5B73EF451CE9DA4E00C388DA /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B73EF441CE9DA4E00C388DA /* AlertViewController.swift */; };
 		5BAB23C31CE9847B0077A761 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAB23C21CE9847B0077A761 /* AppDelegate.swift */; };
 		5BAB23C51CE9847B0077A761 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAB23C41CE9847B0077A761 /* ViewController.swift */; };
 		5BAB23C81CE9847B0077A761 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAB23C61CE9847B0077A761 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		5B73EF3D1CE9A5ED00C388DA /* readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
 		5B73EF3F1CE9A63C00C388DA /* LifeCycleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeCycleViewController.swift; sourceTree = "<group>"; };
 		5B73EF411CE9A87500C388DA /* ACLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACLog.swift; sourceTree = "<group>"; };
+		5B73EF441CE9DA4E00C388DA /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		5BAB23BF1CE9847B0077A761 /* ACAssessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACAssessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BAB23C21CE9847B0077A761 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BAB23C41CE9847B0077A761 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,14 @@
 			name = "Assessment#3";
 			sourceTree = "<group>";
 		};
+		5B73EF431CE9D9A200C388DA /* Assessment#4 */ = {
+			isa = PBXGroup;
+			children = (
+				5B73EF441CE9DA4E00C388DA /* AlertViewController.swift */,
+			);
+			name = "Assessment#4";
+			sourceTree = "<group>";
+		};
 		5BAB23B61CE9847B0077A761 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 		5BAB23C11CE9847B0077A761 /* ACAssessment */ = {
 			isa = PBXGroup;
 			children = (
+				5B73EF431CE9D9A200C388DA /* Assessment#4 */,
 				5B73EF3C1CE9A5C900C388DA /* Assessment#3 */,
 				5B73EF3B1CE99C8900C388DA /* Assessment#2 */,
 				5BAB23D71CE987410077A761 /* Assessment#1 */,
@@ -177,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BAB23C51CE9847B0077A761 /* ViewController.swift in Sources */,
+				5B73EF451CE9DA4E00C388DA /* AlertViewController.swift in Sources */,
 				5BAB23CB1CE9847B0077A761 /* ACAssessment.xcdatamodeld in Sources */,
 				5B73EF421CE9A87500C388DA /* ACLog.swift in Sources */,
 				5B73EF401CE9A63C00C388DA /* LifeCycleViewController.swift in Sources */,
