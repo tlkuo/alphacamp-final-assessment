@@ -37,4 +37,5 @@
     - 使用 delegate 方式將相片和文字回傳至原 TableView
     - 使用 UIScrollView 達到照片放大縮小的功能
     - 使用 SLComposeViewController 分享照片到 facebook
+    - 將照片儲存在使用者 App 的 Documents 資料夾中
     - Reference: [Capture Images](https://developer.apple.com/library/ios/samplecode/AVCam/AVCam-iOSUsingAVFoundationtoCaptureImagesandMovies.zip)
