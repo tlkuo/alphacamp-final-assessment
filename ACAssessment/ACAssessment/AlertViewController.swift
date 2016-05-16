@@ -49,4 +49,16 @@ extension AlertViewController: UITableViewDataSource, UITableViewDelegate {
 
         return cell
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let data = alertData[indexPath.row]
+        let controller = UIAlertController(title: data, message: "", preferredStyle: .Alert)
+        let action = UIAlertAction(title: "關閉", style: .Default, handler: nil)
+
+        controller.addAction(action)
+
+        self.presentViewController(controller, animated: true, completion: {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        })
+    }
 }
