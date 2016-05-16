@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Iqc-FM-1LS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ACAssessment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,6 +21,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Sum Of Odd View Controller-->
+        <scene sceneID="IwC-5l-Guy">
+            <objects>
+                <viewController id="Iqc-FM-1LS" customClass="SumOfOddViewController" customModule="ACAssessment" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gbW-zV-o2l"/>
+                        <viewControllerLayoutGuide type="bottom" id="cLy-eF-EH5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uKQ-Jk-EKW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="計算 1 ~ 100 中奇數的總和" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCI-9X-8Lp">
+                                <rect key="frame" x="181" y="268" width="237" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="output" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvB-sR-c0X">
+                                <rect key="frame" x="20" y="312" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WvB-sR-c0X" secondAttribute="trailing" constant="20" id="Hr1-Lh-YX0"/>
+                            <constraint firstItem="rCI-9X-8Lp" firstAttribute="centerX" secondItem="uKQ-Jk-EKW" secondAttribute="centerX" id="OLM-rT-xXZ"/>
+                            <constraint firstItem="WvB-sR-c0X" firstAttribute="top" secondItem="rCI-9X-8Lp" secondAttribute="bottom" constant="20" id="VWz-Xm-bRm"/>
+                            <constraint firstItem="rCI-9X-8Lp" firstAttribute="centerY" secondItem="uKQ-Jk-EKW" secondAttribute="centerY" constant="-20" id="k3W-ez-tu3"/>
+                            <constraint firstItem="WvB-sR-c0X" firstAttribute="centerX" secondItem="uKQ-Jk-EKW" secondAttribute="centerX" id="oXC-RP-bln"/>
+                            <constraint firstItem="WvB-sR-c0X" firstAttribute="leading" secondItem="uKQ-Jk-EKW" secondAttribute="leading" constant="20" id="qUR-iA-jOQ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="oXC-RP-bln"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="outputLabel" destination="WvB-sR-c0X" id="YRB-8B-JNY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hrV-MZ-gJT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="977" y="315"/>
         </scene>
     </scenes>
 </document>
