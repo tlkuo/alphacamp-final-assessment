@@ -248,6 +248,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageTableView" destination="ybN-z4-3Vf" id="x9a-O1-mr6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIy-XV-GZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -282,8 +285,56 @@
                     <view key="view" contentMode="scaleToFill" id="KYU-Ec-QGg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlI-vX-iHs">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="6L0-sI-YMp"/>
+                                    <constraint firstAttribute="width" constant="100" id="vee-8Z-flU"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wH-Ys-Zoa">
+                                <rect key="frame" x="280" y="410" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1jS-z6-F3X"/>
+                                    <constraint firstAttribute="width" constant="40" id="uOk-rG-a3I"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="takePhoto:" destination="lmH-Eb-Oe1" eventType="touchUpInside" id="M0w-Dh-40E"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="data" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YWl-kg-Y64">
+                                <rect key="frame" x="250" y="360" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="s6l-7R-Tr8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FlI-vX-iHs" firstAttribute="centerY" secondItem="KYU-Ec-QGg" secondAttribute="centerY" id="2RF-Jn-GqH"/>
+                            <constraint firstItem="1wH-Ys-Zoa" firstAttribute="centerX" secondItem="KYU-Ec-QGg" secondAttribute="centerX" id="3q4-QV-u9V"/>
+                            <constraint firstItem="FlI-vX-iHs" firstAttribute="centerX" secondItem="KYU-Ec-QGg" secondAttribute="centerX" id="BGP-Wy-JNc"/>
+                            <constraint firstItem="yVi-1P-kHI" firstAttribute="top" secondItem="1wH-Ys-Zoa" secondAttribute="bottom" constant="20" id="Nan-lW-duv"/>
+                            <constraint firstItem="YWl-kg-Y64" firstAttribute="top" secondItem="FlI-vX-iHs" secondAttribute="bottom" constant="10" id="R1L-J3-hNQ"/>
+                            <constraint firstItem="1wH-Ys-Zoa" firstAttribute="top" secondItem="YWl-kg-Y64" secondAttribute="bottom" constant="20" id="Sgf-SI-kiL"/>
+                            <constraint firstItem="YWl-kg-Y64" firstAttribute="centerX" secondItem="KYU-Ec-QGg" secondAttribute="centerX" id="oKt-61-uFc"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Nan-lW-duv"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cameraView" destination="FlI-vX-iHs" id="vaL-TI-SnQ"/>
+                        <outlet property="imageTextField" destination="YWl-kg-Y64" id="TpH-6Q-U5T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4H-nZ-bWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

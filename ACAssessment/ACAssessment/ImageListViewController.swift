@@ -8,7 +8,21 @@
 
 import UIKit
 
+class ImageData {
+    var image: UIImage
+    var text: String
+    
+    init(image: UIImage, text: String) {
+        self.image = image
+        self.text = text
+    }
+}
+
 class ImageListViewController: UIViewController {
+    
+    @IBOutlet weak var imageTableView: UITableView!
+    
+    var imageData: [ImageData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,19 +42,34 @@ class ImageListViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if let controller = segue.destinationViewController as? ImageCaptureViewController {
+            controller.delegate = self
+            controller.defaultText = "data \(imageData.count + 1)"
+        }
     }
-
 }
 
 extension ImageListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return imageData.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ImageItem", forIndexPath: indexPath)
-        
+
+        cell.imageView?.image = imageData[indexPath.row].image
+        cell.textLabel?.text = imageData[indexPath.row].text
+
         return cell
+    }
+}
+
+extension ImageListViewController: ImageCaptureDelegate {
+
+    func capturedImage(image: UIImage, text: String) {
+        imageData.append(ImageData(image: image, text: text))
+        imageTableView.reloadData()
     }
 }
