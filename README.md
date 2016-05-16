@@ -15,3 +15,9 @@
     - 設定兩個 UIView 等寬且高度為 superView 的九分之一
     
     Note: 邊界與寬高為約略估計值。
+
+3. View Controller 的 life cycle
+    - 建立 singleton 物件來觀察並紀錄 life cycle
+    - 繼承要觀察的函式方法，例如：viewDidLoad，viewWillAppear，viewDidAppear，viewWillLayoutSubviews，viewDidLayoutSubviews，viewWillDisappear，viewDidDisappear
+    - 將紀錄存到 singleton 物件並寫入檔案 
+    - Reference: [Life Cycle](https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson4.html)
