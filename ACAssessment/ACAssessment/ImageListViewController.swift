@@ -47,6 +47,15 @@ class ImageListViewController: UIViewController {
             controller.delegate = self
             controller.defaultText = "data \(imageData.count + 1)"
         }
+
+        if let controller = segue.destinationViewController as? ImageShareViewController,
+            indexPath = imageTableView.indexPathForSelectedRow {
+
+            controller.shareImage = imageData[indexPath.row].image
+            controller.shareText = imageData[indexPath.row].text
+
+            imageTableView.deselectRowAtIndexPath(indexPath, animated: false)
+        }
     }
 }
 

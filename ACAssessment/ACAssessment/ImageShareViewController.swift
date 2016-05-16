@@ -10,10 +10,22 @@ import UIKit
 
 class ImageShareViewController: UIViewController {
 
+    @IBOutlet weak var shareImageView: UIImageView!
+    @IBOutlet weak var shareTextLabel: UILabel!
+    
+    var shareImage: UIImage?
+    var shareText: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let shareImage = self.shareImage {
+            shareImageView.image = shareImage
+        }
+
+        if let shareText = self.shareText {
+            shareTextLabel.text = shareText
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,4 +44,11 @@ class ImageShareViewController: UIViewController {
     }
     */
 
+}
+
+extension ImageShareViewController: UIScrollViewDelegate {
+
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return shareImageView
+    }
 }

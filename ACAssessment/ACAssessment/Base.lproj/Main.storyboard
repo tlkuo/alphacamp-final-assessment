@@ -259,7 +259,7 @@
         <!--Image Share View Controller-->
         <scene sceneID="waK-Nl-lT6">
             <objects>
-                <viewController id="F0F-Ts-ddh" customClass="ImageShareViewController" customModule="ACAssessment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="F0F-Ts-ddh" customClass="ImageShareViewController" customModule="ACAssessment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kat-Uk-5m8"/>
                         <viewControllerLayoutGuide type="bottom" id="XSd-ZK-ae7"/>
@@ -267,8 +267,60 @@
                     <view key="view" contentMode="scaleToFill" id="ApS-jA-i0r">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="d70-rq-HaQ">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pmk-yr-jsQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vSI-dL-tky">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="vSI-dL-tky" secondAttribute="trailing" id="Hvn-LJ-RJm"/>
+                                            <constraint firstItem="vSI-dL-tky" firstAttribute="top" secondItem="Pmk-yr-jsQ" secondAttribute="top" id="NK3-Vb-GOx"/>
+                                            <constraint firstAttribute="bottom" secondItem="vSI-dL-tky" secondAttribute="bottom" id="PCd-zT-0cb"/>
+                                            <constraint firstItem="vSI-dL-tky" firstAttribute="leading" secondItem="Pmk-yr-jsQ" secondAttribute="leading" id="tFC-Bl-yS1"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Pmk-yr-jsQ" firstAttribute="centerX" secondItem="d70-rq-HaQ" secondAttribute="centerX" id="4XO-dU-b2r"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pmk-yr-jsQ" secondAttribute="trailing" id="8Ot-Wu-5vF"/>
+                                    <constraint firstAttribute="height" constant="200" id="F7d-ld-W0a"/>
+                                    <constraint firstItem="Pmk-yr-jsQ" firstAttribute="leading" secondItem="d70-rq-HaQ" secondAttribute="leading" id="LKk-3r-4w1"/>
+                                    <constraint firstAttribute="width" constant="200" id="U5w-LE-mPQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pmk-yr-jsQ" secondAttribute="bottom" id="Ub5-zz-LH4"/>
+                                    <constraint firstItem="Pmk-yr-jsQ" firstAttribute="top" secondItem="d70-rq-HaQ" secondAttribute="top" id="XaS-Dq-DK3"/>
+                                    <constraint firstItem="Pmk-yr-jsQ" firstAttribute="centerY" secondItem="d70-rq-HaQ" secondAttribute="centerY" id="bD4-Zi-fbF"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="F0F-Ts-ddh" id="Mw7-MR-jtL"/>
+                                </connections>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bt5-jf-8i2">
+                                <rect key="frame" x="20" y="420" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d70-rq-HaQ" firstAttribute="centerY" secondItem="ApS-jA-i0r" secondAttribute="centerY" id="3Hu-Zi-BVp"/>
+                            <constraint firstItem="d70-rq-HaQ" firstAttribute="centerX" secondItem="ApS-jA-i0r" secondAttribute="centerX" id="95c-ad-DTD"/>
+                            <constraint firstItem="Bt5-jf-8i2" firstAttribute="top" secondItem="d70-rq-HaQ" secondAttribute="bottom" constant="20" id="JPB-nb-8WN"/>
+                            <constraint firstAttribute="trailing" secondItem="Bt5-jf-8i2" secondAttribute="trailing" constant="20" id="VKV-cS-SXV"/>
+                            <constraint firstItem="Bt5-jf-8i2" firstAttribute="leading" secondItem="ApS-jA-i0r" secondAttribute="leading" constant="20" id="wgW-wP-pvI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="shareImageView" destination="vSI-dL-tky" id="dwC-0W-C8u"/>
+                        <outlet property="shareTextLabel" destination="Bt5-jf-8i2" id="9vX-9c-aHX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMs-su-q5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
