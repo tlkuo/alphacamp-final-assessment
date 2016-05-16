@@ -31,7 +31,7 @@ class ACLog {
     func save(content: NSString) {
 
         dispatch_async(serialQueue, {
-            let home = NSHomeDirectory().stringByAppendingString("/readme.rtf")
+            let home = NSHomeDirectory().stringByAppendingString("/Documents/readme.rtf")
             
             do {
                 try content.writeToFile(home, atomically: true, encoding: NSUTF8StringEncoding)
