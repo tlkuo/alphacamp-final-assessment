@@ -105,15 +105,30 @@ class ImageCaptureViewController: UIViewController {
         
         if let videoConnection = stillImageOutput.connectionWithMediaType(AVMediaTypeVideo) {
             stillImageOutput.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: { buffer, error in
-                
-                let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer)
-                let dataProvider = CGDataProviderCreateWithCFData(imageData)
-                let cgImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, .RenderingIntentDefault)
-                let image = UIImage(CGImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.Right)
+
+                let image = self.processImageBuffer(buffer)
 
                 self.delegate?.capturedImage(image, text: self.imageTextField.text ?? "")
                 self.navigationController?.popViewControllerAnimated(true)
             })
         }
+    }
+
+    func processImageBuffer(buffer: CMSampleBuffer) -> UIImage {
+
+        let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer)
+        let dataProvider = CGDataProviderCreateWithCFData(imageData)
+        let cgImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, .RenderingIntentDefault)
+        let image = UIImage(CGImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.Right)
+        
+        // resize image
+        let contextSize = CGSizeMake(100, 100)
+        let imageSize = CGSizeMake(100, image.size.height * 100 / image.size.width)
+        UIGraphicsBeginImageContextWithOptions(contextSize, false, 0)
+        image.drawInRect(CGRect(origin: CGPointZero, size: imageSize))
+        let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return resizeImage
     }
 }
