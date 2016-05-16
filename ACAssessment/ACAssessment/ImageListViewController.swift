@@ -27,7 +27,7 @@ class ImageListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        loadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +35,43 @@ class ImageListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Custom Method
+    
+    func saveData() {
+
+        let dataPath = NSHomeDirectory().stringByAppendingString("/Documents/imageData")
+        let nsImageArray = NSMutableArray()
+
+        for data in imageData {
+            let nsImageDic = NSMutableDictionary()
+
+            nsImageDic["image"] = UIImageJPEGRepresentation(data.image, 1.0)
+            nsImageDic["text"] = data.text
+
+            nsImageArray.addObject(nsImageDic)
+        }
+
+        nsImageArray.writeToFile(dataPath, atomically: true)
+    }
+    
+    func loadData() {
+
+        let dataPath = NSHomeDirectory().stringByAppendingString("/Documents/imageData")
+        
+        if let nsImageArray = NSArray(contentsOfFile: dataPath) {
+
+            self.imageData.removeAll()
+            
+            for data in nsImageArray {
+                if let nsDic = data as? NSDictionary,
+                    nsImageData = nsDic["image"] as? NSData,
+                    nsText = nsDic["text"] as? String {
+
+                    self.imageData.append(ImageData(image: UIImage(data: nsImageData)!, text: nsText))
+                }
+            }
+        }
+    }
 
     // MARK: - Navigation
 
@@ -80,5 +117,6 @@ extension ImageListViewController: ImageCaptureDelegate {
     func capturedImage(image: UIImage, text: String) {
         imageData.append(ImageData(image: image, text: text))
         imageTableView.reloadData()
+        saveData()
     }
 }
