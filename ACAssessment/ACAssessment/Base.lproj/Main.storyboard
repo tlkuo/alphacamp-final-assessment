@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gUT-6p-iOr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Z4c-SY-vlO">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -17,11 +17,59 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hx5-cz-hca">
+                                <rect key="frame" x="240" y="84" width="120" height="40"/>
+                                <color key="backgroundColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="A32-iA-iAj"/>
+                                    <constraint firstAttribute="height" constant="40" id="a9Z-Wd-chT"/>
+                                </constraints>
+                                <state key="normal" title="Assessment#1"/>
+                                <connections>
+                                    <segue destination="Iqc-FM-1LS" kind="show" id="0Cx-9E-gfk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RT-Ii-NTJ">
+                                <rect key="frame" x="240" y="134" width="120" height="40"/>
+                                <color key="backgroundColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8Ys-kc-9tG"/>
+                                    <constraint firstAttribute="width" constant="120" id="y24-6g-fhb"/>
+                                </constraints>
+                                <state key="normal" title="Assessment#2"/>
+                                <connections>
+                                    <segue destination="0Kh-3V-nyT" kind="show" id="s7W-wt-iNx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYp-ui-RcE">
+                                <rect key="frame" x="240" y="184" width="120" height="40"/>
+                                <color key="backgroundColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0aE-zU-bGv"/>
+                                    <constraint firstAttribute="width" constant="120" id="fK8-6b-Fga"/>
+                                </constraints>
+                                <state key="normal" title="Addessment#3"/>
+                                <connections>
+                                    <segue destination="gUT-6p-iOr" kind="show" id="WhB-eX-9yi"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hx5-cz-hca" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5xB-PQ-zv0"/>
+                            <constraint firstItem="7RT-Ii-NTJ" firstAttribute="top" secondItem="Hx5-cz-hca" secondAttribute="bottom" constant="10" id="GUl-Hi-n3b"/>
+                            <constraint firstItem="Hx5-cz-hca" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="WL7-Sz-J99"/>
+                            <constraint firstItem="7RT-Ii-NTJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bHf-8c-E1q"/>
+                            <constraint firstItem="LYp-ui-RcE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bhB-G0-T2t"/>
+                            <constraint firstItem="LYp-ui-RcE" firstAttribute="top" secondItem="7RT-Ii-NTJ" secondAttribute="bottom" constant="10" id="yzr-7T-NOZ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="1VL-Cb-QBE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1057" y="180"/>
         </scene>
         <!--Sum Of Odd View Controller-->
         <scene sceneID="IwC-5l-Guy">
@@ -69,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrV-MZ-gJT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="142"/>
+            <point key="canvasLocation" x="1773" y="-764"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="auZ-16-kLz">
@@ -107,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37e-kN-Ai8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="861"/>
+            <point key="canvasLocation" x="1781" y="205"/>
         </scene>
         <!--Life Cycle View Controller-->
         <scene sceneID="jA8-Kg-2no">
@@ -142,7 +190,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bw9-St-UPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="1556"/>
+            <point key="canvasLocation" x="1781" y="956"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nks-mn-FDr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z4c-SY-vlO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zvv-6M-LdW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="OH9-br-z4t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sfe-pD-ucW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="180"/>
         </scene>
     </scenes>
 </document>
