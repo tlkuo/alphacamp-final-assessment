@@ -124,7 +124,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Observe Messages" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRy-PA-pO9">
                                 <rect key="frame" x="20" y="20" width="560" height="560"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -136,6 +136,9 @@
                             <constraint firstAttribute="trailing" secondItem="qRy-PA-pO9" secondAttribute="trailing" constant="20" id="yJY-Mj-nfa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logTextView" destination="qRy-PA-pO9" id="HRW-8w-GA9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bw9-St-UPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

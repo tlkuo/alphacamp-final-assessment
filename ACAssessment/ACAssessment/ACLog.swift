@@ -18,10 +18,10 @@ class ACLog {
     }
 
     func log(message: String) {
-        logs.append("\(NSDate()) - \(message)")
+        logs.append("\(NSDate())\n  \(message)")
     }
 
     func dump() -> String {
-        return logs.joinWithSeparator("\n")
+        return logs.joinWithSeparator("\n\n")
     }
 }

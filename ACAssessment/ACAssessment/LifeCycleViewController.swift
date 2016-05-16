@@ -10,10 +10,45 @@ import UIKit
 
 class LifeCycleViewController: UIViewController {
 
+    @IBOutlet weak var logTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        ACLog.sharedInstance.log("\(#function)")
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.logTextView.text = ACLog.sharedInstance.dump()
+        })
+    }
 
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        ACLog.sharedInstance.log("\(#function)")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        ACLog.sharedInstance.log("\(#function)")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillAppear(animated)
+        ACLog.sharedInstance.log("\(#function)")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        ACLog.sharedInstance.log("\(#function)")
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        ACLog.sharedInstance.log("\(#function)")
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        ACLog.sharedInstance.log("\(#function)")
     }
 
     override func didReceiveMemoryWarning() {
