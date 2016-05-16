@@ -35,4 +35,6 @@
     - 增加 UIBarButtonItem 到 UINavigationItem 處並設定系統預設值為 Add
     - 點擊 Add 按鈕時顯示另外一個 UIViewController 做照相的功能
     - 使用 delegate 方式將相片和文字回傳至原 TableView
+    - 使用 UIScrollView 達到照片放大縮小的功能
+    - 使用 SLComposeViewController 分享照片到 facebook
     - Reference: [Capture Images](https://developer.apple.com/library/ios/samplecode/AVCam/AVCam-iOSUsingAVFoundationtoCaptureImagesandMovies.zip)
