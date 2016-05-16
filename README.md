@@ -21,3 +21,12 @@
     - 繼承要觀察的函式方法，例如：viewDidLoad，viewWillAppear，viewDidAppear，viewWillLayoutSubviews，viewDidLayoutSubviews，viewWillDisappear，viewDidDisappear
     - 將紀錄存到 singleton 物件並寫入檔案 
     - Reference: [Life Cycle](https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson4.html)
+
+4. Table View
+    - 建立 UITableView 並實作 UITableViewDataSource, UITableViewDelegate
+    - ```func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int```
+      回傳 table 行數
+    - ```func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell```
+      將 table cell 的資料填入並回傳
+    - ```func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)```
+      將點選的資料放入 UIAlertController 並顯示
