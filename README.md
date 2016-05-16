@@ -30,3 +30,9 @@
       將 table cell 的資料填入並回傳
     - ```func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)```
       將點選的資料放入 UIAlertController 並顯示
+
+5. Table View & Camera
+    - 增加 UIBarButtonItem 到 UINavigationItem 處並設定系統預設值為 Add
+    - 點擊 Add 按鈕時顯示另外一個 UIViewController 做照相的功能
+    - 使用 delegate 方式將相片和文字回傳至原 TableView
+    - Reference: [Capture Images](https://developer.apple.com/library/ios/samplecode/AVCam/AVCam-iOSUsingAVFoundationtoCaptureImagesandMovies.zip)
